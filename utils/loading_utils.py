@@ -4,7 +4,7 @@ from model.model import *
 
 def load_model(path_to_model):
     print('Loading model {}...'.format(path_to_model))
-    raw_model = torch.load(path_to_model)
+    raw_model = torch.load(path_to_model, map_location=torch.device('cpu'))
     arch = raw_model['arch']
 
     try:
